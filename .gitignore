@@ -1,0 +1,19 @@
+# Config and secrets file
+config.ini
+secrets.ini
+
+# Python compiled bytecode
+*.pyc
+
+# Virtual Environment
+venv
+
+# Editors
+.vscode/
+*.swp
+.#*
+
+# Ruby
+.travis.d/.bundle
+.travis.d/Gemfile.lock
+.travis.d/vendor

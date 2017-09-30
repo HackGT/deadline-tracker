@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Deadline Tracker | HackGT 4</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1>HackGT 4 Deadline Tracker</h1>
+        <p>
+            NOTE: This is not a long term solution (just a stopgap for HackGT 4).
+        </p>
+        <h2>Current deadline for "Don't Need Reimbursement" {{ currentDeadline }}</h2>
+        <table class="pure-table pure-table-striped pure-table-horizontal">
+            <thead>
+                <tr>
+                    <th>Confirm Date</th>
+                    <th>Total</th>
+                    <th>Attending</th>
+                    <th>Remaining</th>
+                    <th>GT Total</th>
+                    <th>GT Attending</th>
+                    <th>GT Remaining</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for deadline in deadlines %}
+                <tr>
+                    <td>{{ deadline['time'] }}</td>
+                    <td>{{ deadline['total'] }}</td>
+                    <td>{{ deadline['attending'] }}</td>
+                    <td>{{ deadline['total'] - deadline['attending'] }}</td>
+                    <td>{{ deadline['GTtotal'] }}</td>
+                    <td>{{ deadline['GTattending'] }}</td>
+                    <td>{{ deadline['GTtotal'] - deadline['GTattending'] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </ul>
+    </body>
+</html>
