@@ -1,8 +1,8 @@
 from configparser import ConfigParser
 import os
 
-ENV_CONFIG_KEY = 'BUS_MONITOR_CONFIG'
-ENV_SECRETS_KEY = 'BUS_MONITOR_SECRETS'
+ENV_CONFIG_KEY = 'DEADLINE_TRACKER_CONFIG'
+ENV_SECRETS_KEY = 'DEADLINE_TRACKER_SECRETS'
 
 class Config:
     def __init__(self, config, secrets):
